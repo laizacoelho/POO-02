@@ -1,6 +1,6 @@
 package InterfaceVersusClasseAbstrata;
 
-public class CartaDeAtaqueEspecial extends CartaDeAtaque{
+public class CartaDeAtaqueEspecial extends CartaDeAtaque {
 
     private TipoDeEfeito efeito;
 

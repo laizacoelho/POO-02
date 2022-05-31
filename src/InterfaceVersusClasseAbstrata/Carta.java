@@ -24,6 +24,18 @@ public class Carta {
         System.out.println("Custo: " + custo);
     }
 
+    public String getNome() {
+        return null;
+    }
+
+    public TipoDeCartas getTipo() {
+        return null;
+    }
+
+    public int getCusto() {
+        return 0;
+    }
+
     public void exibirCarta() {
         System.out.println();
         System.out.println("===== Carta =====");
@@ -31,5 +43,4 @@ public class Carta {
         System.out.println("Tipo: " + tipo);
         System.out.println("Custo: " + custo);
     }
-
 }

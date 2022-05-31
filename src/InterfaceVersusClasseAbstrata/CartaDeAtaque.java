@@ -1,10 +1,11 @@
 package InterfaceVersusClasseAbstrata;
 
-public class CartaDeAtaque extends Carta {
+public class CartaDeAtaque extends Carta implements IAtaque {
     protected int ataque;
     protected int vida;
     protected int vidaInicial;
     protected boolean estaVivo;
+
 
     public CartaDeAtaque(String nome, TipoDeCartas tipo, int custo, int ataque, int vida) {
         super(nome, tipo, custo);
@@ -14,6 +15,7 @@ public class CartaDeAtaque extends Carta {
         this.vidaInicial = vida;
     }
 
+    @Override
     public void atacarCarta(CartaDeAtaque cartaAtacada) {
         if (cartaAtacada.estaVivo) {
             cartaAtacada.receberAtaque(this.ataque);
@@ -23,15 +25,17 @@ public class CartaDeAtaque extends Carta {
         }
     }
 
+    @Override
     public void atacarJogador(Jogador jogadorAtacado) {
         if (jogadorAtacado.isEstaVivo()) {
             jogadorAtacado.receberAtaque(this.ataque);
         } else{
             System.out.println();
-            System.out.println(jogadorAtacado.getNome() + " morreu e está fora do Jogo.");
+            System.out.println(jogadorAtacado.getNome() + " morreu e está fora do jogo.");
         }
     }
 
+    @Override
     public void receberAtaque(int ataqueRecebido) {
         this.vida -= ataqueRecebido;
         System.out.println();

@@ -7,7 +7,7 @@ public class RepositorioDeCartas {
     private List<Carta> cartasSimples = new ArrayList<>();
     private List<CartaDeAtaque> cartasAtaque = new ArrayList<>();
     private List<CartaDeAtaqueEspecial> cartasEspeciais = new ArrayList<>();
-    public List <Carta> baralhoDeCartas = new ArrayList<>();
+    public List <Carta> baralhoDeCartaSimples = new ArrayList<>();
 
     Random random = new Random();
 
@@ -23,8 +23,8 @@ public class RepositorioDeCartas {
         for (int i=0; i<15; i++) {
             geradorDeCartasEspeciais();
         }
-        Collections.shuffle(baralhoDeCartas);
-        Collections.shuffle(baralhoDeCartas);
+        Collections.shuffle(baralhoDeCartaSimples);
+        Collections.shuffle(baralhoDeCartaSimples);
     }
 
     private void geradorDeCartasSimples() {
@@ -32,9 +32,9 @@ public class RepositorioDeCartas {
         String nome = geradorDeNome();
         TipoDeCartas tipo = geradorDeTipo();
         int custo = geradorDeCusto();
-        Carta  cartaSimples = new Carta(nome, tipo, custo);
-        cartasSimples.add(cartaSimples);
-        baralhoDeCartas.add(cartaSimples);
+        Carta carta = new Carta(nome, tipo, custo);
+        cartasSimples.add(carta);
+        baralhoDeCartaSimples.add(carta);
     }
 
     private void geradorDeCartasAtaque() {
@@ -45,7 +45,7 @@ public class RepositorioDeCartas {
         int vida = geradorPontosDeVida();
         CartaDeAtaque cartaAtaque = new CartaDeAtaque(nome, tipo, custo, ataque, vida);
         cartasAtaque.add(cartaAtaque);
-        baralhoDeCartas.add(cartaAtaque);
+        baralhoDeCartaSimples.add(cartaAtaque);
     }
 
     private void geradorDeCartasEspeciais() {
@@ -57,7 +57,7 @@ public class RepositorioDeCartas {
         TipoDeEfeito efeito = geradorDeEfeito();
         CartaDeAtaqueEspecial cartaDeAtaqueEspecial = new CartaDeAtaqueEspecial(nome, tipo, custo, ataque, vida, efeito);
         cartasEspeciais.add(cartaDeAtaqueEspecial);
-        baralhoDeCartas.add(cartaDeAtaqueEspecial);
+        baralhoDeCartaSimples.add(cartaDeAtaqueEspecial);
     }
 
     private String geradorDeNome() {
