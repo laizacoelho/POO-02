@@ -61,8 +61,7 @@ public class RepositorioDeCartas {
     }
 
     private String geradorDeNome() {
-        String nome = String.valueOf(Integer.toHexString(random.nextInt(1000000)));
-        return nome;
+        return Integer.toHexString(random.nextInt(1000000));
     }
 
     private TipoDeCartas geradorDeTipo() {
@@ -79,18 +78,15 @@ public class RepositorioDeCartas {
     }
 
     private int geradorDeCusto() {
-        int custo = random.nextInt(15) + 11;
-        return custo;
+        return random.nextInt(15) + 11;
     }
 
     private int geradorPontosDeAtaque() {
-        int pontosDeAtaque = random.nextInt(10) + 1;
-        return pontosDeAtaque;
+        return random.nextInt(10) + 1;
     }
 
     private  int geradorPontosDeVida() {
-        int pontosDeVida = random.nextInt(20) + 1;
-        return pontosDeVida;
+        return random.nextInt(20) + 1;
     }
 
     private TipoDeEfeito geradorDeEfeito() {

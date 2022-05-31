@@ -1,13 +1,12 @@
 package InterfaceVersusClasseAbstrata;
 
 
-import java.util.List;
 import java.util.Scanner;
 
 public class JogoDeCartas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int menu = 0;
+        int menu;
         do {
             System.out.println("============ JOGO DE CARTAS ============");
             System.out.println("Escolha uma opção:");
