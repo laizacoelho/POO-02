@@ -37,6 +37,10 @@ public class Brinquedo extends Produto {
         } else {
             System.out.println("O produto informado não é um brinquedo");
         }
+    }
 
+    @Override
+    public boolean isProdutoParaAdulto() {
+        return false;
     }
 }

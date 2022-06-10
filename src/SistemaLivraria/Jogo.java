@@ -57,4 +57,9 @@ public class Jogo extends Produto{
             System.out.println("O produto informado não é um jogo");
         }
     }
+
+    @Override
+    public boolean isProdutoParaAdulto() {
+        return false;
+    }
 }

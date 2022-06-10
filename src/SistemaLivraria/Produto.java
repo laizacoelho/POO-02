@@ -31,6 +31,8 @@ public abstract class Produto implements IGeradorId, Comparable<Produto> {
 
     public abstract void editarProduto(Produto produto);
 
+    public abstract boolean isProdutoParaAdulto();
+
     @Override
     public int compareTo(Produto outroProduto) {
         if(this.tipoProduto.indice < outroProduto.tipoProduto.indice) {

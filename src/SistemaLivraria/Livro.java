@@ -63,4 +63,9 @@ public class Livro extends Produto {
             System.out.println("O produto informado não é um livro");
         }
     }
+
+    @Override
+    public boolean isProdutoParaAdulto() {
+        return false;
+    }
 }

@@ -69,4 +69,9 @@ public class AlbumMusical extends Produto {
         }
 
     }
+
+    @Override
+    public boolean isProdutoParaAdulto() {
+        return false;
+    }
 }

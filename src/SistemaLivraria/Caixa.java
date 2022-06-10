@@ -8,13 +8,8 @@ public class Caixa {
         this.saldoCaixa = saldoCaixa;
     }
 
-
     public double getSaldoCaixa() {
         return saldoCaixa;
-    }
-
-    public void setSaldoCaixa(double saldoCaixa) {
-        this.saldoCaixa = saldoCaixa;
     }
 
     public static void receberCompra (double valorCompra) {

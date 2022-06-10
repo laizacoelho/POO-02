@@ -74,4 +74,9 @@ public class Filme extends Produto {
             System.out.println("O produto informado não é um filme");
         }
     }
+
+    @Override
+    public boolean isProdutoParaAdulto() {
+        return false;
+    }
 }

@@ -1,5 +1,7 @@
 package SistemaLivraria;
+//https://github.com/rflima11/exercicios-poo2-letscode/tree/main/03%20-%20Sistema%20Livraria
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -23,7 +25,10 @@ public class Sistema {
         genrenciaEstoque.adicionarProdutoEstoque(estoque,livro,4);
         genrenciaEstoque.adicionarProdutoEstoque(estoque,jogo,1);
 
-        Vendedor vendedor = new Vendedor();
+        LocalDate dataNascida = LocalDate.of(1988,3,16);
+        Comprador comprador = new Comprador("Laiza", "1501363", "10897719751", dataNascida);
+        GerenciadorDeVendas vendedor = new GerenciadorDeVendas();
+
 
 
 
