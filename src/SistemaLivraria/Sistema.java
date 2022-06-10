@@ -23,13 +23,18 @@ public class Sistema {
         genrenciaEstoque.adicionarProdutoEstoque(estoque,livro,4);
         genrenciaEstoque.adicionarProdutoEstoque(estoque,jogo,1);
 
+        Vendedor vendedor = new Vendedor();
+
+
 
         Collections.sort(estoque.produtos);
-        for (Produto produto : estoque.produtos) {
+       /* for (Produto produto : estoque.produtos) {
             System.out.println(produto.nome);
             System.out.println(produto.tipoProduto);
             System.out.println();
-        }
+        } */
+
+
 
     }
 }

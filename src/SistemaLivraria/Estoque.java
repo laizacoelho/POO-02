@@ -46,6 +46,26 @@ public class Estoque implements IGeradorId{
         } return false;
     }
 
+    public void LerEstoque() {
+        int indice;
+        for (Produto produto : produtos) {
+            produto.lerProduto();
+            indice = produtos.indexOf(produto);
+            System.out.println("Quantidade: " + quantidadeProduto.get(indice));
+        }
+    }
+
+    public void LerEstoquePorCategoria(TipoProduto tipoProduto) {
+        int indice;
+        for (Produto produto : produtos) {
+            if (produto.tipoProduto.indice == tipoProduto.indice) {
+                produto.lerProduto();
+                indice = produtos.indexOf(produto);
+                System.out.println("Quantidade: " + quantidadeProduto.get(indice));
+            }
+        }
+    }
+
 
     public String getNome() {
         return nome;

@@ -1,9 +1,8 @@
 package SistemaLivraria;
 
-public class GerenciadorEstoque implements IGerenciadorEstoque{
+public class GerenciadorEstoque {
 
-    @Override
-    public void adicionarProdutoEstoque(Estoque estoque, Produto produto, int quantidade) {
+    public static void adicionarProdutoEstoque(Estoque estoque, Produto produto, int quantidade) {
         if (estoque.produtoCadastradoNoEstoque(produto.id)) {
             int posicao = estoque.localizarProduto(produto.id);
             int total = estoque.quantidadeProduto.get(posicao) + quantidade;
@@ -16,19 +15,18 @@ public class GerenciadorEstoque implements IGerenciadorEstoque{
         }
     }
 
-    @Override
-    public void deletarProdutoEstoque(Estoque estoque, String idProduto) {
+    public static void deletarProdutoEstoque(Estoque estoque, String idProduto) {
         int posicao = estoque.localizarProduto(idProduto);
         if (posicao >= 0) {
             estoque.produtos.remove(posicao);
             estoque.quantidadeProduto.remove(posicao);
+            System.out.println("Produto deletado!");
         } else {
             System.out.println("Produto não está cadastrado no estoque");
         }
     }
 
-    @Override
-    public void editarQuantidadeProdutoEstoque (Estoque estoque, String idProduto, int novaQuantidade) {
+    public static void editarQuantidadeProdutoEstoque (Estoque estoque, String idProduto, int novaQuantidade) {
         int posicao = estoque.localizarProduto(idProduto);
         if (posicao >= 0) {
             estoque.quantidadeProduto.set(posicao, novaQuantidade);
