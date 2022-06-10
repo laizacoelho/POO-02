@@ -9,24 +9,26 @@ public class GerenciadorDeVendas {
         compraAutorizada = isVendaAutorizada(comprador, produto);
 
         boolean compraEspecial;
-        if (produto.tipoProduto.indice == 1) {
-            compraEspecial = vendaLivroEspecial(estoque, produto, quantidade);
-            if(compraAutorizada && compraEspecial) {
-                VendedorComDesconto vendedorComDesconto = new VendedorComDesconto();
-                vendedorComDesconto.setDesconto(desconto);
-                vendedorComDesconto.operacaoVenda(estoque, produto, quantidade);
-                desconto = 0;
-            } else if (compraAutorizada) {
-                Vendedor vendedor = new Vendedor();
-                vendedor.operacaoVenda(estoque, produto, quantidade);
-            }
+        compraEspecial = vendaEspecial(estoque, produto, quantidade);
+
+        if(compraAutorizada && compraEspecial) {
+            System.out.println("Realizando compra com desconto.");
+            VendedorComDesconto vendedorComDesconto = new VendedorComDesconto();
+            vendedorComDesconto.setDesconto(desconto);
+            vendedorComDesconto.operacaoVenda(estoque, produto, quantidade);
+            desconto = 0;
+        } else if (compraAutorizada) {
+            Vendedor vendedor = new Vendedor();
+            vendedor.operacaoVenda(estoque, produto, quantidade);
         }
     }
 
-    private boolean vendaLivroEspecial(Estoque estoque, Produto produto, int quantidade) {
-        if ((produto.preco * quantidade) >= 200) {
-            desconto = 0.15;
-            return true;
+    private boolean vendaEspecial(Estoque estoque, Produto produto, int quantidade) {
+        if(produto.tipoProduto.indice == 1) {
+            if ((produto.preco * quantidade) >= 200) {
+                desconto = 0.15;
+                return true;
+            }
         }
         return false;
     }
