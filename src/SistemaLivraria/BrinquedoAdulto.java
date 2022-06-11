@@ -1,24 +1,19 @@
 package SistemaLivraria;
 
-public class BriquedoAdulto extends Brinquedo{
+public class BrinquedoAdulto extends Brinquedo{
     private boolean maiorDeIdade;
 
-    public BriquedoAdulto(String nome, double preco, TipoBrinquedo tipo) {
+    public BrinquedoAdulto(String nome, double preco, TipoBrinquedo tipo) {
         super(nome, preco, tipo);
         this.maiorDeIdade = true;
         this.tipoProduto = TipoProduto.BRINQUEDO;
         geradorId();
     }
 
-    public BriquedoAdulto(String nome, TipoBrinquedo tipo) {
-        super(nome, tipo);
+    public BrinquedoAdulto(String nome, double preco) {
+        super(nome, preco);
         this.maiorDeIdade = true;
         this.tipoProduto = TipoProduto.BRINQUEDO;
         geradorId();
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return true;
     }
 }

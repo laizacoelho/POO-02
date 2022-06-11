@@ -3,43 +3,46 @@ package SistemaLivraria;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class Sistema {
     public static void main(String[] args) {
+        Estoque estoque = new Estoque("estoque");
+        GerenciadorDeVendas gerenciadorDeVendas = new GerenciadorDeVendas();
+
+        LocalDate dataNascida = LocalDate.of(2009,9,16);
+        Comprador comprador = new Comprador("Luana", "1601366", "108378347-57", dataNascida);
+
         List<Genero> generos = new ArrayList<>();
         generos.add(Genero.ROMANCE);
         generos.add(Genero.COMEDIA);
         List<String> escritores = new ArrayList<>();
         escritores.add("JK");
-        Livro livro = new Livro("blah", 10.99,generos,escritores,"intriseca");
+
+        Livro livro = new Livro("Harry Potter", 10.99,generos,escritores,"intriseca");
         Brinquedo brinquedo = new Brinquedo("barbie", 50, TipoBrinquedo.BONECO);
-        Jogo jogo = new Jogo("Zerodown", 299.90, "Sony", generos, "warner");
-
-        Estoque estoque = new Estoque("estoque01");
-        GerenciadorEstoque genrenciaEstoque = new GerenciadorEstoque();
-
-        genrenciaEstoque.adicionarProdutoEstoque(estoque,brinquedo,8);
-        genrenciaEstoque.adicionarProdutoEstoque(estoque,livro,4);
-        genrenciaEstoque.adicionarProdutoEstoque(estoque,jogo,1);
-
-        LocalDate dataNascida = LocalDate.of(1988,3,16);
-        Comprador comprador = new Comprador("Laiza", "1501363", "10897719751", dataNascida);
-        GerenciadorDeVendas vendedor = new GerenciadorDeVendas();
+        Brinquedo brinquedo2 = new Brinquedo("Root", 50, TipoBrinquedo.TABULEIRO);
+        Filme filmeAdulto = new FilmeAdulto("Beleza Americana", 64.95);
+        Jogo jogo = new Jogo("Zerodown", 299.90);
+        AlbumMusicalAdulto albumMusicalAdulto = new AlbumMusicalAdulto("Artpop", 19.99);
 
 
 
+        GerenciadorEstoque.adicionarProdutoEstoque(estoque, livro, 132);
+        GerenciadorEstoque.adicionarProdutoEstoque(estoque,brinquedo,8);
+        GerenciadorEstoque.adicionarProdutoEstoque(estoque,brinquedo2,2);
+        GerenciadorEstoque.adicionarProdutoEstoque(estoque, filmeAdulto, 8);
+        GerenciadorEstoque.adicionarProdutoEstoque(estoque,jogo,1);
+        GerenciadorEstoque.adicionarProdutoEstoque(estoque,albumMusicalAdulto,13);
 
         Collections.sort(estoque.produtos);
-       /* for (Produto produto : estoque.produtos) {
-            System.out.println(produto.nome);
-            System.out.println(produto.tipoProduto);
-            System.out.println();
-        } */
 
+        gerenciadorDeVendas.solicitarVenda(estoque,albumMusicalAdulto,2, comprador);
+        gerenciadorDeVendas.solicitarVenda(estoque,brinquedo,10, comprador);
+        gerenciadorDeVendas.solicitarVenda(estoque,brinquedo, 5, comprador);
 
-
+        GerenciadorEstoque.deletarProdutoEstoque(estoque, livro.id);
+        gerenciadorDeVendas.solicitarVenda(estoque,livro,1,comprador);
     }
 }

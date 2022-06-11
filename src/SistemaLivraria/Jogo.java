@@ -17,11 +17,8 @@ public class Jogo extends Produto{
         geradorId();
     }
 
-    public Jogo(String nome, String distribuidora, List<Genero> generos, String estudio) {
-        super(nome);
-        this.distribuidora = distribuidora;
-        this.generos = generos;
-        this.estudio = estudio;
+    public Jogo(String nome, double preco) {
+        super(nome, preco);
         this.tipoProduto = TipoProduto.JOGO;
         geradorId();
     }
@@ -56,10 +53,5 @@ public class Jogo extends Produto{
         } else {
             System.out.println("O produto informado não é um jogo");
         }
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return false;
     }
 }

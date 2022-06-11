@@ -12,15 +12,10 @@ public class FilmeAdulto extends Filme{
         geradorId();
     }
 
-    public FilmeAdulto(String nome, String estudio, List<String> diretores, List<Genero> generos, List<String> produtores) {
-        super(nome, estudio, diretores, generos, produtores);
+    public FilmeAdulto(String nome, double preco) {
+        super(nome, preco);
         this.maiorDeIdade = true;
         this.tipoProduto = TipoProduto.FILME;
         geradorId();
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return false;
     }
 }

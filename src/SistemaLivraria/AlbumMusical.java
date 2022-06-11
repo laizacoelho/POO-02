@@ -17,11 +17,8 @@ public class AlbumMusical extends Produto {
         geradorId();
     }
 
-    public AlbumMusical(String nome, List<String> musicos, List<String> selos, List<GeneroMusical> generoMusicais) {
-        super(nome);
-        this.musicos = musicos;
-        this.selos = selos;
-        this.generoMusicais = generoMusicais;
+    public AlbumMusical(String nome, double preco) {
+        super(nome, preco);
         this.tipoProduto = TipoProduto.ALBUM_MUSICAL;
         geradorId();
     }
@@ -70,8 +67,4 @@ public class AlbumMusical extends Produto {
 
     }
 
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return false;
-    }
 }

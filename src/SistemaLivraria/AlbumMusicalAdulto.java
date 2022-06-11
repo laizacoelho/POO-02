@@ -13,15 +13,10 @@ public class AlbumMusicalAdulto extends AlbumMusical{
 
     }
 
-    public AlbumMusicalAdulto(String nome, List<String> musicos, List<String> selos, List<GeneroMusical> generoMusicais) {
-        super(nome, musicos, selos, generoMusicais);
+    public AlbumMusicalAdulto(String nome, double preco) {
+        super(nome, preco);
         this.maiorDeIdade = true;
         this.tipoProduto = TipoProduto.ALBUM_MUSICAL;
         geradorId();
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return true;
     }
 }

@@ -1,0 +1,10 @@
+
+W
+java:S4973("<Strings and Boxed types should be compared using "equals()".(½¾ĞÅúÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤ÿÿ
+t
+java:S1210%"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(‘¯Û¶ÿÿÿÿÿ
+T
+java:S5993"9Change the visibility of this constructor to "protected".(¸„À…ùÿÿÿÿ
+T
+java:S5993"9Change the visibility of this constructor to "protected".(Â¿ì¶ÿÿÿÿÿ

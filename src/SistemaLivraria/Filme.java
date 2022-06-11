@@ -19,12 +19,8 @@ public class Filme extends Produto {
         geradorId();
     }
 
-    public Filme(String nome, String estudio, List<String> diretores, List<Genero> generos, List<String> produtores) {
-        super(nome);
-        this.estudio = estudio;
-        this.diretores = diretores;
-        this.generos = generos;
-        this.produtores = produtores;
+    public Filme(String nome, double preco) {
+        super(nome, preco);
         this.tipoProduto = TipoProduto.FILME;
         geradorId();
     }
@@ -73,10 +69,5 @@ public class Filme extends Produto {
         } else {
             System.out.println("O produto informado não é um filme");
         }
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return false;
     }
 }

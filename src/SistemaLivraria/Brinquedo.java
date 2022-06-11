@@ -10,9 +10,8 @@ public class Brinquedo extends Produto {
         geradorId();
     }
 
-    public Brinquedo(String nome, TipoBrinquedo tipo) {
-        super(nome);
-        this.tipo = tipo;
+    public Brinquedo(String nome, double preco) {
+        super(nome, preco);
         this.tipoProduto = TipoProduto.BRINQUEDO;
         geradorId();
     }
@@ -37,10 +36,5 @@ public class Brinquedo extends Produto {
         } else {
             System.out.println("O produto informado não é um brinquedo");
         }
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return false;
     }
 }

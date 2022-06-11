@@ -17,11 +17,8 @@ public class Livro extends Produto {
         geradorId();
     }
 
-    public Livro(String nome, List<Genero> generos, List<String> escritores, String editora) {
-        super(nome);
-        this.generos = generos;
-        this.escritores = escritores;
-        this.editora = editora;
+    public Livro(String nome, double preco) {
+        super(nome, preco);
         this.tipoProduto = TipoProduto.LIVRO;
         geradorId();
     }
@@ -62,10 +59,5 @@ public class Livro extends Produto {
         } else {
             System.out.println("O produto informado não é um livro");
         }
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return false;
     }
 }

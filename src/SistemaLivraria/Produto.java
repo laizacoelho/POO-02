@@ -15,10 +15,6 @@ public abstract class Produto implements IGeradorId, Comparable<Produto> {
         this.preco = preco;
     }
 
-    public Produto(String nome) {
-        this.nome = nome;
-    }
-
     @Override
     public void geradorId() {
         Date data = new Date();
@@ -30,8 +26,6 @@ public abstract class Produto implements IGeradorId, Comparable<Produto> {
     public abstract void lerProduto();
 
     public abstract void editarProduto(Produto produto);
-
-    public abstract boolean isProdutoParaAdulto();
 
     @Override
     public int compareTo(Produto outroProduto) {

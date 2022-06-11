@@ -1,6 +1,6 @@
 package SistemaLivraria;
 
-public class Vendedor {
+public class Vendedor implements IVendedor{
 
     public void operacaoVenda (Estoque estoque, Produto produtoVendido, int quantidadeVendida) {
         int indice;

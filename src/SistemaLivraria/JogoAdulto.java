@@ -12,15 +12,10 @@ public class JogoAdulto extends Jogo{
         geradorId();
     }
 
-    public JogoAdulto(String nome, String distribuidora, List<Genero> generos, String estudio) {
-        super(nome, distribuidora, generos, estudio);
+    public JogoAdulto(String nome, double preco) {
+        super(nome, preco);
         this.maiorDeIdade = true;
         this.tipoProduto = TipoProduto.JOGO;
         geradorId();
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return true;
     }
 }

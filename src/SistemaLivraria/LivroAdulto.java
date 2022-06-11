@@ -12,15 +12,10 @@ public class LivroAdulto extends Livro{
         geradorId();
     }
 
-    public LivroAdulto(String nome, List<Genero> generos, List<String> escritores, String editora) {
-        super(nome, generos, escritores, editora);
+    public LivroAdulto(String nome, double preco) {
+        super(nome, preco);
         this.maiorDeIdade = true;
         this.tipoProduto = TipoProduto.LIVRO;
         geradorId();
-    }
-
-    @Override
-    public boolean isProdutoParaAdulto() {
-        return true;
     }
 }
