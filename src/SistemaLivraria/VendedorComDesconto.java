@@ -18,7 +18,7 @@ public class VendedorComDesconto extends Vendedor{
                     GerenciadorEstoque.editarQuantidadeProdutoEstoque(estoque, produtoVendido.id, quantidadeAtualizada);
                     double valorVenda = (produtoVendido.preco * quantidadeVendida) * (1-desconto);
                     Caixa.receberCompra(valorVenda);
-                    System.out.println("Produto: " + produtoVendido.nome + " vendido.");
+                    System.out.println("Produto: " + produtoVendido.nome + " vendido com desconto.");
                     System.out.println(("Quantidade: " + quantidadeVendida));
                     System.out.println("Quantidade ainda disponível no estoque: " + quantidadeAtualizada);
                     desconto = 0;

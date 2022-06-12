@@ -29,7 +29,7 @@ public class Sistema {
 
 
 
-        GerenciadorEstoque.adicionarProdutoEstoque(estoque, livro, 132);
+        GerenciadorEstoque.adicionarProdutoEstoque(estoque, livro, 250);
         GerenciadorEstoque.adicionarProdutoEstoque(estoque,brinquedo,8);
         GerenciadorEstoque.adicionarProdutoEstoque(estoque,brinquedo2,2);
         GerenciadorEstoque.adicionarProdutoEstoque(estoque, filmeAdulto, 8);
@@ -42,7 +42,8 @@ public class Sistema {
         gerenciadorDeVendas.solicitarVenda(estoque,brinquedo,10, comprador);
         gerenciadorDeVendas.solicitarVenda(estoque,brinquedo, 5, comprador);
 
-        GerenciadorEstoque.deletarProdutoEstoque(estoque, livro.id);
-        gerenciadorDeVendas.solicitarVenda(estoque,livro,1,comprador);
+        gerenciadorDeVendas.solicitarVenda(estoque,livro,201,comprador);
+        GerenciadorEstoque.deletarProdutoEstoque(estoque, jogo.id);
+        gerenciadorDeVendas.solicitarVenda(estoque,jogo, 1, comprador);
     }
 }
