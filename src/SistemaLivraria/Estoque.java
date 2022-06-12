@@ -46,7 +46,7 @@ public class Estoque implements IGeradorId{
         } return false;
     }
 
-    public void LerEstoque() {
+    public void lerEstoque() {
         int indice;
         for (Produto produto : produtos) {
             produto.lerProduto();
@@ -55,7 +55,7 @@ public class Estoque implements IGeradorId{
         }
     }
 
-    public void LerEstoquePorCategoria(TipoProduto tipoProduto) {
+    public void lerEstoquePorCategoria(TipoProduto tipoProduto) {
         int indice;
         for (Produto produto : produtos) {
             if (produto.tipoProduto.indice == tipoProduto.indice) {
