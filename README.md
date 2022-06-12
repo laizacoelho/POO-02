@@ -39,8 +39,6 @@ Int compareTo (Produto outroProduto) -> método sobrescrito da interface Compara
 
  
 
-**Classes que herdam diretamente de Produto:**
-
 **2. AlbumMusical**
 
 Classe filha de produto. Possui dois construtores, um considerando todos os atributos de álbum musical e o outro que contempla apenas nome, preço e id, para o caso de um cadastro mais rápido.  
